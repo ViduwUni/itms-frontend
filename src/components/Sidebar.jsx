@@ -20,6 +20,9 @@ import WysiwygIcon from "@mui/icons-material/Wysiwyg";
 import WifiIcon from "@mui/icons-material/Wifi";
 import HandymanIcon from "@mui/icons-material/Handyman";
 import BuildIcon from "@mui/icons-material/Build";
+import ScreenshotMonitorIcon from "@mui/icons-material/ScreenshotMonitor";
+import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
+import FingerprintIcon from "@mui/icons-material/Fingerprint";
 
 const drawerWidth = 280;
 
@@ -33,6 +36,8 @@ const ICONS = {
   "/assignments": <AssignmentIndIcon />,
   "/repairs": <HandymanIcon />,
   "/maintenance": <BuildIcon />,
+  "/billing-reminders": <NotificationsActiveIcon />,
+  "/fingerprint": <FingerprintIcon />,
   "/": <HomeIcon />,
 };
 
@@ -64,6 +69,7 @@ export default function Sidebar({ navItems, open, setOpen, disabled = false }) {
           width: drawerWidth,
           borderRight: "1px solid rgb(226 232 240)",
           boxShadow: "2px 0 12px rgba(0,0,0,0.05)",
+          overflowX: "hidden",
         },
       }}
     >
@@ -80,7 +86,7 @@ export default function Sidebar({ navItems, open, setOpen, disabled = false }) {
         <div className="px-5 py-5">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-slate-900 to-slate-700">
-              <DashboardIcon sx={{ color: "#fff", fontSize: 20 }} />
+              <ScreenshotMonitorIcon sx={{ color: "#fff", fontSize: 20 }} />
             </div>
             <div>
               <h2 className="text-lg font-semibold text-slate-900">ITMS</h2>

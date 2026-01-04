@@ -102,7 +102,7 @@ export default function AppLayout({
       />
 
       {/* Main Content Area */}
-      <main className="mx-auto max-w-[85rem] px-4 py-6 sm:px-6 lg:px-8">
+      <main className="mx-auto max-w-[90rem] px-4 py-16 sm:px-6 lg:px-8">
         <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
           {children}
         </div>

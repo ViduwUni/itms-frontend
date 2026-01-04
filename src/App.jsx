@@ -19,6 +19,8 @@ import Software from "./pages/Software";
 import Internet from "./pages/Internet";
 import Repairs from "./pages/Repairs";
 import Maintenance from "./pages/Maintenance";
+import BillingReminders from "./pages/BillingReminders";
+import FingerprintAccess from "./pages/FingerprintAccess";
 
 import {
   fetchMe,
@@ -117,6 +119,8 @@ function AppInner() {
         children: [
           { to: "/repairs", label: "Repairs & Tickets" },
           { to: "/maintenance", label: "Maintenance Jobs" },
+          { to: "/billing-reminders", label: "Billing Reminders" },
+          { to: "/fingerprint", label: "Fingerprint Access" },
         ],
       });
     }
@@ -268,6 +272,38 @@ function AppInner() {
               isLoggingOut={isLoggingOut}
             >
               <Maintenance />
+            </AppLayout>
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/billing-reminders"
+        element={
+          <ProtectedRoute user={user} booted={booted} allowRoles={["admin"]}>
+            <AppLayout
+              navItems={navItems}
+              user={user}
+              onLogout={onLogout}
+              isLoggingOut={isLoggingOut}
+            >
+              <BillingReminders />
+            </AppLayout>
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/fingerprint"
+        element={
+          <ProtectedRoute user={user} booted={booted} allowRoles={["admin"]}>
+            <AppLayout
+              navItems={navItems}
+              user={user}
+              onLogout={onLogout}
+              isLoggingOut={isLoggingOut}
+            >
+              <FingerprintAccess />
             </AppLayout>
           </ProtectedRoute>
         }
